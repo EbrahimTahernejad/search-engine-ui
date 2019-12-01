@@ -1,0 +1,52 @@
+<div class="top-bar">
+    <form (submit)="submit($event)">
+        <span class="dima-sogand colorText">گوگولی</span>
+        <mat-form-field class="form-item" appearance="outline">
+            <input [(ngModel)]="query" [ngModelOptions]="{standalone: true}" matInput placeholder="بجو :)">
+            <mat-icon class="icon-btn" clickable matSuffix (click)="submit($event)">search</mat-icon>
+        </mat-form-field>
+        <div class="spacer"></div>
+        <button style="margin-left: 12px;" mat-fab type="button" (click)="settings($event)">
+            <mat-icon matSuffix>settings</mat-icon>
+        </button>
+    </form>
+</div>
+<div class="container" *ngIf="!isLoading.value">
+    <div class="sad" *ngIf="response.value.correction == undefined && response.value.documents.length == 0">
+        نتیجه ای یافت نشد :(
+    </div>
+    <div class="correction" *ngIf="response.value.correction != undefined">
+        <div *ngIf="response.value.correction.active">
+            به شما نتایج
+            <a href="#" (click)="changeQurery($event)">{{ response.value.correction.query }}</a>
+            نشان داده شده است
+            <br>
+            <a href="#" (click)="changeForced($event)">تنها نمایش نتایج ‌{{ query }}</a>
+        </div>
+        <div *ngIf="!response.value.correction.active">
+            آیا منظور شما این بود؟ 
+            <a (click)="changeQurery($event)">{{ response.value.correction.query }}</a>
+        </div>
+    </div>
+    <div class="item" *ngFor="let item of response.value.documents">
+        <div class="title">
+            <a target="_blank" [href]="item.url">{{ item.title }}</a>
+        </div>
+        <div class="url">
+            <a target="_blank" [href]="item.url">{{ item.url }}</a>
+        </div>
+        <div class="body">
+            {{ item.body }}
+        </div>
+        <div class="score">
+            امتیاز: 
+            {{ item.score }}
+        </div>
+    </div>
+</div>
+<div *ngIf="isLoading.value" class="loading">
+    <mat-spinner class="spinner" diameter="45"></mat-spinner>
+</div>
+<button class="fab" style="margin-left: 12px;" mat-fab type="button" (click)="settings($event)">
+    <mat-icon matSuffix>settings</mat-icon>
+</button>

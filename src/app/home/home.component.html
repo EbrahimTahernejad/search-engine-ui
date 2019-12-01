@@ -1,0 +1,22 @@
+<div class="gradDynamic"></div>
+<div class="container">
+    <div class="spacer"></div>
+    <div>
+        <p class="dima-sogand"><span class="colorText">گوگولی</span></p>
+    </div>
+    <div *ngIf="!isLoading.value">
+        <form (submit)="submit($event)">
+            <mat-form-field class="form-item" appearance="outline">
+                <input [(ngModel)]="query" [ngModelOptions]="{standalone: true}" matInput placeholder="بجو :)">
+                <mat-icon class="icon-btn" clickable matSuffix (click)="submit($event)">search</mat-icon>
+            </mat-form-field>
+            <button style="margin-right: 10px;" mat-fab type="button" (click)="settings($event)">
+                <mat-icon matSuffix>settings</mat-icon>
+            </button>
+        </form>
+    </div>
+    <div *ngIf="isLoading.value">
+        <mat-spinner diameter="45"></mat-spinner>
+    </div>
+    <div class="spacer"></div>
+</div>

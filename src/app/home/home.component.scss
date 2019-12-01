@@ -1,0 +1,32 @@
+.dima-sogand {
+    text-align: center;
+    span {
+        font-size: 100px;
+        // background: linear-gradient(to right, #30CFD0 0%, #330867 100%);
+        //background: linear-gradient(90deg, #1CB5E0 0%, #000851 100%);
+        //color: #fff;
+        text-align: center;
+    }
+}
+
+.container {
+    display: flex;
+    width: 100vw;
+    min-height: 100vh;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    > .spacer {
+        flex: 1 1 auto;
+    }
+    > :not(.spacer) {
+        flex: 0 1 150px;
+    }
+    .form-item {
+        width: 307.5px;
+    }
+    .icon-btn {
+        cursor: pointer;
+    }
+}

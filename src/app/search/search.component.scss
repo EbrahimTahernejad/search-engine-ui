@@ -1,0 +1,130 @@
+.top-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    form {
+        display: flex;
+        align-content: center;
+        align-items: center;
+        background: rgba(255, 255, 255, 0.36);
+        backdrop-filter: blur(10px);
+        box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.13);
+        overflow: visible;
+        > .spacer {
+            flex-grow: 1;
+        }
+        > span {
+            font-size: 40px;
+            text-align: center;
+            margin-left: 10px;
+            margin-right: 22px;
+        }
+        > .form-item {
+            margin-top: 22px;
+        }
+    }
+}
+.container {
+    padding-top: 119px;
+    .sad {
+        font-size: 14px;
+        text-align: center;
+        padding: 0 10px;
+        box-sizing: border-box;
+    }
+    .correction {
+        padding: 20px 20px 20px;
+        box-sizing: border-box;
+        * {
+            font-size: 17px;
+            font-weight: bold;
+        }
+        a {
+            color: blue;
+            text-decoration: underline;
+            cursor: pointer;
+            font-style: italic;
+        }
+    }
+    .item {
+        padding: 20px;
+        box-sizing: border-box;
+        max-width: 500px;
+        width: 100%;
+        * {
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .title {
+            a {
+                text-decoration: none;
+                font-size: 20px;
+            }
+        }
+        .url {
+            direction: ltr;
+            text-align: right;
+            a {
+                direction: ltr;
+                text-align: right;
+                text-decoration: none;
+                color: green;
+                white-space: nowrap;
+                font-size: 12px;
+            }
+        }
+        .body {
+            font-size: 14px;
+            color: #555;
+            max-height: 114px;
+        }
+        .score {
+            font-size: 12px;
+            color: grey;
+        }
+    }
+}
+.fab {
+    display: none;
+}
+.spinner {
+    margin: 0 auto;
+}
+.loading {
+    margin-top: 120px;
+    text-align: center;
+}
+
+@media (max-width: 600px) {
+    .top-bar {
+        position: static;
+        form {
+            > .spacer {
+                flex-grow: 0;
+            }
+            > .form-item {
+                flex-grow: 1;
+                margin-left: 22px;
+            }
+            > button {
+                display: none;
+            }
+        }
+    }
+    .container {
+        padding-top: 15px;
+        .item .body {
+            max-height: 70px;
+        }
+    }
+    .fab {
+        display: block;
+        position: fixed;
+        left: 0;
+        bottom: 14px;
+    }
+    .loading {
+        margin-top: 20px;
+    }
+}

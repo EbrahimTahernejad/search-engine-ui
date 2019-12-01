@@ -1,0 +1,38 @@
+<div dir="rtl">
+<h1 mat-dialog-title>تنظیمات جست و جو</h1>
+<div mat-dialog-content>
+    <mat-form-field class="field">
+        <mat-label>TF Type</mat-label>
+        <mat-select [(ngModel)]="tf">
+            <mat-option value="r">Realtive</mat-option>
+            <mat-option value="a">Augmented</mat-option>
+            <mat-option value="l">Logarithm</mat-option>
+        </mat-select>
+    </mat-form-field> 
+    <mat-form-field class="field">
+        <mat-label>IDF Type</mat-label>
+        <mat-select [(ngModel)]="idf">
+            <mat-option value="n">Normal</mat-option>
+            <mat-option value="p">Probabilistic</mat-option>
+        </mat-select>
+    </mat-form-field>  
+    <mat-form-field class="field">
+        <mat-label>Distance Function</mat-label>
+        <mat-select [(ngModel)]="dis">
+            <mat-option value="m">Matching score</mat-option>
+            <mat-option value="c">Cosine similarity</mat-option>
+        </mat-select>
+    </mat-form-field>      
+    <mat-form-field class="field">
+        <mat-label>Ranker</mat-label>
+        <mat-select [(ngModel)]="ranker">
+            <mat-option value="t">tfidf</mat-option>
+            <mat-option value="b">bm25</mat-option>
+        </mat-select>
+    </mat-form-field>   
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="cancel()" cdkFocusInitial>بیخیال</button>
+  <button mat-button (click)="save()">ذخیره</button>
+</div>
+</div>

@@ -1,1 +1,98 @@
 /* You can add global styles to this file, and also import other style files */
+@font-face {
+    font-family: DimaSogand;
+    src: url('/assets/fonts/dima-sogand/DimaSogand.woff');
+}
+
+@font-face {
+	font-family: IRANSans;
+	font-style: normal;
+	font-weight: 900;
+	src: url('/assets/fonts/IRANSans/woff/IRANSansWeb_Black.woff');
+}
+@font-face {
+	font-family: IRANSans;
+	font-style: normal;
+	font-weight: bold;
+	src: url('/assets/fonts/IRANSans/woff/IRANSansWeb_Bold.woff');
+}
+@font-face {
+	font-family: IRANSans;
+	font-style: normal;
+	font-weight: 500;
+	src: url('/assets/fonts/IRANSans/woff/IRANSansWeb_Medium.woff');
+}
+@font-face {
+	font-family: IRANSans;
+	font-style: normal;
+	font-weight: 300;
+	src: url('/assets/fonts/IRANSans/woff/IRANSansWeb_Light.woff');
+}
+@font-face {
+	font-family: IRANSans;
+	font-style: normal;
+	font-weight: 200;
+	src: url('/assets/fonts/IRANSans/woff/IRANSansWeb_UltraLight.woff');
+}
+@font-face {
+	font-family: IRANSans;
+	font-style: normal;
+	font-weight: normal;
+	src: url('/assets/fonts/IRANSans/woff/IRANSansWeb.woff');
+}
+
+@import '~@angular/material/theming';
+$custom-typography: mat-typography-config(
+    $font-family: 'IRANSans, Roboto, Arial, "Helvetica Neue", sans-serif'
+);
+@include angular-material-typography($custom-typography);
+  
+html, body { height: 100%; margin: 0; padding: 0; }
+body { font-family: IRANSans, Roboto, Arial, "Helvetica Neue", sans-serif }
+.dima-sogand { font-family: DimaSogand !important; }
+* { margin: 0; padding: 0; }
+
+.colorText {
+    background: #444;
+    background: radial-gradient(circle,red,transparent), yellow;
+    background-size:400%;
+    animation:colorSpin 30s linear infinite;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+@keyframes colorSpin{
+    25%{background-position:0 100%}
+    50%{background-position:100% 100%}
+    75%{background-position:100% 0}
+    100%{filter:hue-rotate(360deg)}
+}
+
+.mat-form-field-appearance-outline .mat-form-field-infix {
+    padding: 0.5em 0 1.2em 0;
+}
+
+.mat-form-field:not(.mat-form-field-appearance-legacy) .mat-form-field-prefix .mat-icon, .mat-form-field:not(.mat-form-field-appearance-legacy) .mat-form-field-suffix .mat-icon {
+    display: block;
+    transform: translateY(3px);
+}
+
+.mat-form-field-appearance-outline .mat-form-field-outline-start {
+    border-radius: 27.345px 0 0 27.345px!important;
+}
+
+[dir=rtl] .mat-form-field-appearance-outline .mat-form-field-outline-start {
+    border-radius: 0 27.345px 27.345px 0!important;
+}
+
+.mat-form-field-appearance-outline .mat-form-field-outline-end, .mat-form-field-appearance-outline .mat-form-field-outline-start {
+    min-width: 50px!important;
+}
+
+.mat-form-field-appearance-outline .mat-form-field-outline-end {
+    border-radius: 0 27.345px 27.345px 0!important;
+}
+
+[dir=rtl] .mat-form-field-appearance-outline .mat-form-field-outline-end {
+    border-radius: 27.345px 0 0 27.345px!important;
+}
