@@ -31,7 +31,7 @@ export class SearchService {
   force: BehaviorSubject<boolean> = new BehaviorSubject(undefined);
   response: BehaviorSubject<SearchResponse> = new BehaviorSubject(undefined);
 
-  private root = 'http://d38e14f9.ngrok.io/api/v1';
+  private root = 'http://127.0.0.1:5000/api/v1';
 
   constructor(private httpClient: HttpClient, private router: Router, private activeRoute: ActivatedRoute) {
     combineLatest(this.tf, this.idf, this.dis, this.ranker).subscribe(values => {

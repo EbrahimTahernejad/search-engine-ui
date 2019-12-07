@@ -35,9 +35,7 @@
         <div class="url">
             <a target="_blank" [href]="item.url">{{ item.url }}</a>
         </div>
-        <div class="body">
-            {{ item.body }}
-        </div>
+        <div class="body" [innerHTML]="item.body"></div>
         <div class="score">
             امتیاز: 
             {{ item.score }}
